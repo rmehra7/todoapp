@@ -3,14 +3,13 @@ import copy
 from database.todoapp_models import TODO_LIST
 
 
-def get_last_id():
-    last_task = TODO_LIST[-1]
-    return last_task['id'] + 1
-
-
 class TodoService:
 
     todo_list = copy.deepcopy(TODO_LIST)
+
+    def get_last_id(self):
+        last_task = self.todo_list[-1]
+        return last_task['id'] + 1
 
     def get_task(self, taskid):
         """Get specific task by id."""
@@ -34,7 +33,7 @@ class TodoService:
 
     def add_task(self, payload):
         """Add new record"""
-        payload['id'] = get_last_id()
+        payload['id'] = self.get_last_id()
         self.todo_list.append(payload)
         return True
 

@@ -17,17 +17,14 @@ task_fields = api.model('Tasks', {
 @todoapis.route('/api/v1/tasks')
 class Tasks(Resource):
 
-    def get(self, taskid=None):
+    def get(self):
         """To fetch one or all tasks."""
         response = {
             "msg": constant.FETCH_MESSAGE,
             "status_code": 200
         }
 
-        if taskid:
-            response["tasks"] = task_object.get_task(taskid)
-        else:
-            response["tasks"] = task_object.get_all_tasks()
+        response["tasks"] = task_object.get_all_tasks()
         return response
 
     @todoapis.expect(task_fields)
