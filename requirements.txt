@@ -1,0 +1,6 @@
+flask==1.1.2
+werkzeug==0.16.1
+flask_restplus==0.13.0
+requests==2.25.1
+pytest==7.0.1
+pytest-flask==1.2.0

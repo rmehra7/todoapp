@@ -1,0 +1,7 @@
+FETCH_MESSAGE = "Tasks fetched successfully."
+CREATE_MESSAGE = "Task added successfully."
+UPDATE_MESSAGE = "Task updated successfully."
+DELETE_MESSAGE = "Task deleted successfully."
+NOT_FOUND = "Task not found."
+INVALID_TASK_ID = "Invalid task id."
+INVALID_INPUT = "Invalid input data."

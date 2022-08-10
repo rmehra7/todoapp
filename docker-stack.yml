@@ -1,0 +1,26 @@
+version: "3.4"
+services:
+
+  app:
+    image: todoapp:latest
+    ports:
+     - "5000:5000"
+    deploy:
+     replicas: 1
+     update_config:
+       parallelism: 1
+       delay: 10s
+       order: start-first
+     restart_policy:
+       condition: on-failure
+       delay: 10s
+    environment:
+     - NODE_ENV=development
+    networks:
+     - todo-net
+
+volumes:
+  mongodb_data_container:
+    
+networks:
+  todo-net:
